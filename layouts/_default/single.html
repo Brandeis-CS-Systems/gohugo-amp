@@ -1,6 +1,7 @@
 {{ partial "structure/head" . }}
 
 <main>
+    {{with .Title}}<h1 id="{{urlize .}}">{{.}}</h1>{{end -}}
     {{ .Content }}
 </main>
 
