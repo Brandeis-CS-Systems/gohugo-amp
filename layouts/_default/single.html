@@ -1,8 +1,15 @@
 {{ partial "structure/head" . }}
 
 <main>
-    {{with .Title}}<h1 id="{{urlize .}}">{{.}}</h1>{{end -}}
-    {{ .Content }}
+	{{ partial "navigation/breadcrumbs.html" . }}
+	{{with .Title}}<h1 id="{{urlize .}}">{{.}}</h1>{{end}}
+	{{ .Content }}
 </main>
+
+{{- with .Site.Params.debug -}}
+	{{- if . -}}
+		{{- partial "debugprint.html" $ -}}
+	{{- end -}}
+{{- end -}}
 
 {{ partial "structure/foot" . }}

@@ -1,7 +1,9 @@
 {{ partial "structure/head" . }}
 
 <main>
-    Default list
+	{{ partial "navigation/breadcrumbs.html" . }}
+	{{with .Title}}<h1 id="{{urlize .}}">{{.}}</h1>{{end}}
+	{{ .Content }}
 </main>
 
 {{ partial "structure/foot" . }}
