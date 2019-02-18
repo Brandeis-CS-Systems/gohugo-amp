@@ -1,15 +1,6 @@
-{{ partial "structure/head" . }}
+{{ partial "guru/head.html" . }}
 
-<main>
-	{{ partial "navigation/breadcrumbs.html" . }}
-	{{with .Title}}<h1 id="{{urlize .}}">{{.}}</h1>{{end}}
-	{{ .Content }}
-</main>
+{{ partial "guru/title.html" .}}
+{{ .Content }}
 
-{{- with .Site.Params.debug -}}
-	{{- if . -}}
-		{{- partial "debugprint.html" $ -}}
-	{{- end -}}
-{{- end -}}
-
-{{ partial "structure/foot" . }}
+{{ partial "guru/foot.html" . }}

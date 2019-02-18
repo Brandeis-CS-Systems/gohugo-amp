@@ -1,9 +1,9 @@
-{{ partial "structure/head" . }}
+{{ partial "guru/head.html" . }}
 
-<main>
-	{{ partial "navigation/breadcrumbs.html" . }}
-	{{with .Title}}<h1 id="{{urlize .}}">{{.}}</h1>{{end}}
-	{{ .Content }}
-</main>
+{{ partial "guru/title.html" .}}
+{{ .Content }}
 
-{{ partial "structure/foot" . }}
+{{$paginator := .Paginate (where .Pages "Section" "==" "")}}
+{{partial "navigation/pagination.html" .}}
+
+{{ partial "guru/foot.html" . }}
