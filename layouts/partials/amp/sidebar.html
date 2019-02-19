@@ -1,0 +1,6 @@
+<button id="open-sidebar" class="hamburger" on="tap:sidebar.toggle">≡</button>
+<amp-sidebar id="sidebar" layout="nodisplay" side="left">
+	<button id="close-sidebar" on="tap:sidebar.close">×</button>
+	{{ partial "navigation/toc" . }}
+	{{ partial "guru/nav" . }}
+</amp-sidebar>

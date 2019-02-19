@@ -1,0 +1,9 @@
+<nav id="links">
+	<ul>
+	{{ range $.Site.Data.header_links.pages }}
+		{{ with $.Site.GetPage . }}
+			<li><a href="{{.Permalink}}">{{.Title}}</a></li>
+		{{ end }}
+	{{ end }}
+	</ul>
+</nav>

@@ -1,0 +1,10 @@
+{{- $email := .Get 0 -}}
+{{- with .Get 0 -}}
+	{{- if in . "@" -}}
+		{{- $email = . -}}
+	{{- else -}}
+		{{- $email = printf "%s@cs.brandeis.edu" . -}}
+	{{- end -}}
+{{- end -}}
+<a href="mailto:{{$email}}">{{with .Get 1}}{{.}}{{else}}{{$email}}{{end}}</a>
+{{- /* No whitespace after </a> */ -}}

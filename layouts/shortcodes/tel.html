@@ -1,0 +1,4 @@
+{{- $number := printf "1781736%s" (.Get 0) -}}
+{{- $dispNumber := printf "781-736-%s" (.Get 0) -}}
+<a href="tel:{{$number}}">{{$dispNumber}}</a>
+{{- /* No whitespace after </a> */ -}}

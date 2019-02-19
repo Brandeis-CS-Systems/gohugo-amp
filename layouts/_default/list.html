@@ -3,7 +3,7 @@
 {{ partial "guru/title.html" .}}
 {{ .Content }}
 
-{{$paginator := .Paginate (where .Pages "Section" "==" "")}}
+{{$paginator := .Paginate (union .Site.Sections (where .Pages "Section" "eq" .Section))}}
 {{partial "navigation/pagination.html" .}}
 
 {{ partial "guru/foot.html" . }}
