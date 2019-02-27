@@ -1,0 +1,6 @@
+{{- /* TYPE HREF [SIZES [REL=icon]] */ -}}
+<link rel="{{with index . 3}}{{. | safeHTML}}{{else}}icon{{end}}"
+      {{- /**/}} {{printf "type=\"image/%s\"" (index . 0) | safeHTMLAttr}}
+      {{- /**/}}{{with index . 2}} sizes="{{. | safeHTML}}"{{end}}
+      {{- /**/}} href="{{index . 1 | relURL | safeHTML}}"/>
+{{- /* No whitespace after */ -}}
