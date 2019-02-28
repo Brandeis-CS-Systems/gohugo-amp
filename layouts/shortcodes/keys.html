@@ -1,0 +1,10 @@
+<kbd>
+{{- range split (.Get 0) " " -}}
+	{{- if and (eq "[" (substr . 0 1)) (eq "]" (substr . -1 1)) -}}
+		{{substr . 1 -1}}
+	{{- else -}}
+		<kbd>{{.}}</kbd>
+	{{- end -}}
+{{- end -}}
+</kbd>
+{{- /**/ -}}
